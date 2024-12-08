@@ -1,0 +1,10 @@
+Package: saudichain-wallet
+Version: 1.0.0
+Section: x11
+Priority: optional
+Architecture: amd64
+Depends: libc6 (>= 2.17), libstdc++6
+Maintainer: SaudiChain Development Team
+Description: SaudiChain Wallet
+ A secure wallet for the SaudiChain cryptocurrency.
+ Homepage: https://github.com/SaudiJew/SaudiChain-test
