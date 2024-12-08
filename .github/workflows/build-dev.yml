@@ -1,0 +1,19 @@
+name: Development Build
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: subosito/flutter-action@v2
+      - name: Build and Test
+        run: |
+          cd wallet
+          flutter test
+          flutter build linux --debug
