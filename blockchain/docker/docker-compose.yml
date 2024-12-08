@@ -1,0 +1,42 @@
+version: '3'
+services:
+  node1:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "18333:18333"
+    volumes:
+      - node1_data:/root/.saudichain
+    networks:
+      - saudichain_testnet
+
+  node2:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "18334:18333"
+    volumes:
+      - node2_data:/root/.saudichain
+    networks:
+      - saudichain_testnet
+
+  node3:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "18335:18333"
+    volumes:
+      - node3_data:/root/.saudichain
+    networks:
+      - saudichain_testnet
+
+volumes:
+  node1_data:
+  node2_data:
+  node3_data:
+
+networks:
+  saudichain_testnet:
